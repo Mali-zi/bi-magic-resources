@@ -1,0 +1,37 @@
+{
+  "parent_id": null,
+  "dashboard_id": 2,
+  "view_class": "internal",
+  "title": "Сумма продаж",
+  "description": null,
+  "frame": null,
+  "layout": null,
+  "length": null,
+  "idx": 0,
+  "srt": 2147483647,
+  "config": {
+    "url": "res:MainComponent.js",
+    "frame": {
+      "h": 4,
+      "w": 12,
+      "x": 0,
+      "y": 0
+    },
+    "dataSource": {
+      "koob": "luxms_edu.luxms_edu_oil_sales",
+      "style": {},
+      "xAxis": "gasoline_type",
+      "yAxis": "measures",
+      "filters": {
+        "city": true
+      },
+      "measures": [
+        "sum(price):sum_price"
+      ],
+      "dimensions": [
+        "gasoline_type"
+      ]
+    }
+  },
+  "created": "2024-05-07T15:53:46.717724+03:00"
+}

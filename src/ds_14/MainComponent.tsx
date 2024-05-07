@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Combobox } from "@consta/uikit/Combobox";
 import { Theme, presetGpnDefault } from "@consta/uikit/Theme";
+import { Select } from '@consta/uikit/Select';
 
 type Item = {
   label: string;
@@ -9,15 +10,15 @@ type Item = {
 
 const items: Item[] = [
   {
-    label: "Первый",
+    label: 'Первый',
     id: 1,
   },
   {
-    label: "Второй",
+    label: 'Второй',
     id: 2,
   },
   {
-    label: "Третий",
+    label: 'Третий',
     id: 3,
   },
 ];
@@ -27,11 +28,18 @@ const MainComponent = (props) => {
   const [value, setValue] = useState<Item | null>();
   return (
     <Theme className="App" preset={presetGpnDefault}>
+      <Select items={items} value={value} onChange={setValue} />
       <Combobox
+        placeholder="Выберите вариант"
         items={items}
+        size="m"
+        view="default"
+        form="default"
+        label="Combobox"
+        labelPosition="top"
+        caption="Пример"
         value={value}
-        onChange={setValue}
-        placeholder="Выберите нужный элемент из списка"
+        onChange={( value ) => setValue(value)}
       />
     </Theme>
   );
